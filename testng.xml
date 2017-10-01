@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test">
+  
+  <groups>
+         <define name="AllTestCases">
+	   		 <include name="Sanity"/>
+	   		 <include name="Regression"/>
+	   		 <include name="Smoke"/>
+		</define>
+	 	<run>
+	   		 <include name="AllTestCases"/>
+		</run>
+ </groups>
+  
+  <classes>
+			<class name="SeleniumCourseDay6WDCommands.SeleniumWebdriverCommands"/>
+			<!--<class name="SeleniumCourseAssignments.amazonLoginLatha" /> -->
+  </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
