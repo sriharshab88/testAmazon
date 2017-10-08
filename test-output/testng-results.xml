@@ -1,47 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
+<testng-results skipped="0" failed="2" ignored="1" total="3" passed="0">
   <reporter-output>
-    <line>
-      <![CDATA[Firefox browser launched successfully]]>
-    </line>
-    <line>
-      <![CDATA[Sign In button text is Sign in]]>
-    </line>
-    <line>
-      <![CDATA[PASS - Email entered Successfully]]>
-    </line>
-    <line>
-      <![CDATA[PASS - Password entered Successfully]]>
-    </line>
-    <line>
-      <![CDATA[PASS - Sign in Button Clicked Successfully]]>
-    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14587" started-at="2017-09-26T03:11:14Z" finished-at="2017-09-26T03:11:29Z">
+  <suite name="Default suite" duration-ms="633" started-at="2017-10-08T18:19:14Z" finished-at="2017-10-08T18:19:15Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14587" started-at="2017-09-26T03:11:14Z" finished-at="2017-09-26T03:11:29Z">
-      <class name="SeleniumCourseDay6WDCommands.SeleniumWebdriverCommands">
-        <test-method status="PASS" signature="timeOutCommands()[pri:0, instance:SeleniumCourseDay6WDCommands.SeleniumWebdriverCommands@27efef64]" name="timeOutCommands" duration-ms="14570" started-at="2017-09-26T08:41:14Z" finished-at="2017-09-26T08:41:29Z">
+    <test name="Default test" duration-ms="633" started-at="2017-10-08T18:19:14Z" finished-at="2017-10-08T18:19:15Z">
+      <class name="MadhuAmazonAccount.amazonAccount">
+        <test-method status="FAIL" signature="amazonAccountCreation()[pri:0, instance:MadhuAmazonAccount.amazonAccount@68c4039c]" name="amazonAccountCreation" duration-ms="493" started-at="2017-10-08T23:49:14Z" finished-at="2017-10-08T23:49:15Z">
+          <exception class="java.lang.IllegalStateException">
+            <message>
+              <![CDATA[The driver executable does not exist: G:\Java and Selenium Course\Testing\testAmazon\geckodriver.exe]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalStateException: The driver executable does not exist: G:\Java and Selenium Course\Testing\testAmazon\geckodriver.exe
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:534)
+	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:136)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:131)
+	at org.openqa.selenium.firefox.GeckoDriverService.access$100(GeckoDriverService.java:41)
+	at org.openqa.selenium.firefox.GeckoDriverService$Builder.findDefaultExecutable(GeckoDriverService.java:115)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:329)
+	at org.openqa.selenium.firefox.FirefoxDriver.toExecutor(FirefoxDriver.java:207)
+	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:103)
+	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:99)
+	at MadhuAmazonAccount.amazonAccount.amazonAccountCreation(amazonAccount.java:97)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalStateException -->
           <reporter-output>
-            <line>
-              <![CDATA[Firefox browser launched successfully]]>
-            </line>
-            <line>
-              <![CDATA[Sign In button text is Sign in]]>
-            </line>
-            <line>
-              <![CDATA[PASS - Email entered Successfully]]>
-            </line>
-            <line>
-              <![CDATA[PASS - Password entered Successfully]]>
-            </line>
-            <line>
-              <![CDATA[PASS - Sign in Button Clicked Successfully]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- timeOutCommands -->
-      </class> <!-- SeleniumCourseDay6WDCommands.SeleniumWebdriverCommands -->
+        </test-method> <!-- amazonAccountCreation -->
+        <test-method status="FAIL" signature="amazonCustomer()[pri:0, instance:MadhuAmazonAccount.amazonAccount@68c4039c]" name="amazonCustomer" duration-ms="32" started-at="2017-10-08T23:49:15Z" finished-at="2017-10-08T23:49:15Z">
+          <exception class="java.lang.IllegalStateException">
+            <message>
+              <![CDATA[The driver executable does not exist: G:\Java and Selenium Course\Testing\testAmazon\geckodriver.exe]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalStateException: The driver executable does not exist: G:\Java and Selenium Course\Testing\testAmazon\geckodriver.exe
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:534)
+	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:136)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:131)
+	at org.openqa.selenium.firefox.GeckoDriverService.access$100(GeckoDriverService.java:41)
+	at org.openqa.selenium.firefox.GeckoDriverService$Builder.findDefaultExecutable(GeckoDriverService.java:115)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:329)
+	at org.openqa.selenium.firefox.FirefoxDriver.toExecutor(FirefoxDriver.java:207)
+	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:103)
+	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:99)
+	at MadhuAmazonAccount.amazonAccount.amazonCustomer(amazonAccount.java:162)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalStateException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- amazonCustomer -->
+      </class> <!-- MadhuAmazonAccount.amazonAccount -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
