@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test name="Test(failed)">
-    <groups>
-      <run>
-        <include name="AllTestCases"/>
-      </run>
-    </groups>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="SeleniumCourseDay6WDCommands.SeleniumWebdriverCommands">
+      <class name="MadhuAmazonAccount.amazonAccount">
         <methods>
-          <include name="signInValidations"/>
+          <include name="amazonCustomer"/>
+          <include name="amazonAccountCreation"/>
         </methods>
-      </class> <!-- SeleniumCourseDay6WDCommands.SeleniumWebdriverCommands -->
+      </class> <!-- MadhuAmazonAccount.amazonAccount -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
