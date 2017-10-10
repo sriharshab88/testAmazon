@@ -10,6 +10,10 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
+/**
+ * This class file contains Test scripts
+ * @author Madhukara R S
+ */
 public class AmazonLoginMadhukar {
 
 	@Test

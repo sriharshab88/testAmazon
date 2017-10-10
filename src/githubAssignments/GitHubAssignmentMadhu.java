@@ -1,4 +1,4 @@
-package MadhuAmazonAccount;
+package githubAssignments;
 
 import java.io.File;
 
@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-public class amazonAccount {
+public class GitHubAssignmentMadhu {
 
 	@Test(enabled = false)
 	public void Amazon(){
