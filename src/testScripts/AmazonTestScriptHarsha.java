@@ -16,7 +16,11 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import libraries.GenericMethods;
+import libraries.ProjectSpecificMethods;
 import libraries.Utilities;
+import pageObjects.MyAccountPageObject;
+import pageObjects.SignInPageObject;
 
 /**
  * This class file contains Test scripts
@@ -26,62 +30,38 @@ public class AmazonTestScriptHarsha{
 	
 	public static int i =0;
 	WebDriver driver;
+	WebDriverWait wait;
 	Utilities utilities = new Utilities();
+	SignInPageObject signIn;
+	MyAccountPageObject myAccount;
+	ProjectSpecificMethods projectSpecificMethods;
+	
 
 	@BeforeTest
 	public void startBrowser() {
 		driver = utilities.launchBrowser();
+		wait = new WebDriverWait(driver, 30);
+		signIn = new SignInPageObject(driver, wait);
+		myAccount = new MyAccountPageObject(driver, wait);
+		projectSpecificMethods = new ProjectSpecificMethods(driver, wait);
 	}
 	
 	
 	@Test(groups= {"Sanity", "Smoke"},enabled = true)
-	public void webdriverCommands() {
+	public void webdriverCommands() throws Exception {
 				
-		WebElement signIn = driver.findElement(By.xpath("//a[@class='login']")); //Find element using xpath
-		String text = signIn.getText();  //Get the text of the webelement
-		Reporter.log("Sign In button text is "+ text, true);  
-		
-		signIn.click();  //Clicks the web element
+		signIn.getSignInText();     //Get the text of the webelement
+		signIn.clickSignInLink();  //Clicks the web element
 		String signInTitle = driver.getTitle();  //Gets the window title
-		
-		/**
-		 * Verifies the Sign in Window Title with expected value using if..else statements
-		 */
-		if(signInTitle.equalsIgnoreCase("LOGIN - My Store")) {
-			Reporter.log("PASS - Sign in page displayed successfully", true);
-		}else {
-			Reporter.log("FAIL - Sign in page did not display successfully", true);
-		}
-		
-		/**
-		 * Verifies the Sign in Window Title with expected value using TestNG assertions
-		 */
 		Assert.assertEquals(signInTitle, "Login - My Store", "FAIL - Sign in page did not display successfully");
 		
-		WebElement email = driver.findElement(By.xpath("//input[@id='email']"));  //Identify Email field
-		email.sendKeys("testautomation88@test.com");  //Enter Email into the email field
-		Reporter.log("PASS - Email entered Successfully", true);
+		projectSpecificMethods.Login("testautomation88@test.com", "123456");
 		
-		WebElement password = driver.findElement(By.id("passwd"));  //Identify Password field
-		password.sendKeys("123456");   //Enter Password into the email field
-		Reporter.log("PASS - Password entered Successfully", true);
-		
-		WebElement signInButton = driver.findElement(By.xpath("//button[@id='SubmitLogin']")); //Identify Sign In Button
-		signInButton.click();  //Click the Sign In button
-		Reporter.log("PASS - Sign in Button Clicked Successfully", true);
-		
-		String myAccountText = driver.findElement(By.xpath("//h1[@class='page-heading']")).
-				getText();   //Identify My account text and fetch it
-		
-		/**
-		 * Verifies the My Account text with the expected value using Test NG assertions
-		 */
+		String myAccountText = myAccount.getPageTitle();
 		Assert.assertEquals(myAccountText, "MY ACCOUNT", "FAIL - My Account page is not displayed");
-		
-		WebElement signOut = driver.findElement(By.xpath("//a[@class='logout']")); //Identify Sign Out Button
-		signOut.click();  //Clicks Signout button
-		Reporter.log("PASS - Sign Out Button Clicked Successfully", true);
-	
+
+		myAccount.clickSignOut();
+
 	}
 	
 	@Test(groups = {"Regression"}, enabled = true)
@@ -172,7 +152,7 @@ public class AmazonTestScriptHarsha{
 	
 	@AfterTest
 	public void endBrowser() {
-		
+		driver.close();
 	}
 	
 	
