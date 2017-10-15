@@ -1,0 +1,7 @@
+# AmazonTestScriptHarsha
+email = testautomation88@test.com
+password = 123456
+signInAssertion = Login - My Store
+signInAssertionFailMessage = FAIL - Sign in page did not display successfully
+myAccountAssertion = MY ACCOUNT
+myAccountAssertionFailMessage = FAIL - My Account page is not displayed

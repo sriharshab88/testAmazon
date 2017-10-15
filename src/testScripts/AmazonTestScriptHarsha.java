@@ -21,6 +21,7 @@ import libraries.ProjectSpecificMethods;
 import libraries.Utilities;
 import pageObjects.MyAccountPageObject;
 import pageObjects.SignInPageObject;
+import testData.TestDataReader;
 
 /**
  * This class file contains Test scripts
@@ -43,7 +44,6 @@ public class AmazonTestScriptHarsha{
 		wait = new WebDriverWait(driver, 30);
 		signIn = new SignInPageObject(driver, wait);
 		myAccount = new MyAccountPageObject(driver, wait);
-		projectSpecificMethods = new ProjectSpecificMethods(driver, wait);
 	}
 	
 	
@@ -53,12 +53,12 @@ public class AmazonTestScriptHarsha{
 		signIn.getSignInText();     //Get the text of the webelement
 		signIn.clickSignInLink();  //Clicks the web element
 		String signInTitle = driver.getTitle();  //Gets the window title
-		Assert.assertEquals(signInTitle, "Login - My Store", "FAIL - Sign in page did not display successfully");
+		Assert.assertEquals(signInTitle, TestDataReader.signInAssertion, TestDataReader.signInAssertionFailMessage);
 		
-		projectSpecificMethods.Login("testautomation88@test.com", "123456");
+		signIn.login(TestDataReader.email, TestDataReader.password);
 		
 		String myAccountText = myAccount.getPageTitle();
-		Assert.assertEquals(myAccountText, "MY ACCOUNT", "FAIL - My Account page is not displayed");
+		Assert.assertEquals(myAccountText, TestDataReader.myAccountAssertion, TestDataReader.myAccountAssertionFailMessage);
 
 		myAccount.clickSignOut();
 

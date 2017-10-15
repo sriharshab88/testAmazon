@@ -18,6 +18,13 @@ public class SignInPageObject {
 		genericMethods = new GenericMethods(driver, wait);
 	}
 	
+	public void login(String email, String password) throws Exception {		
+		enterEmail(email);
+		enterPassword(password);
+		clickSignInButton();
+		
+	}
+	
 	public String getSignInText() throws Exception {	
 		String text = genericMethods.getTextByXpath("//a[@class='login']", "FAIL - Sign In text did not display");
 		Reporter.log("Sign In button text is "+text, true);
