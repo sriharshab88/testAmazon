@@ -9,6 +9,7 @@ import java.util.Properties;
 public class Configurations {
 	
 	public static String Url = "http://automationpractice.com/index.php";
-	public static String testDataUrl = System.getProperty("user.dir")+File.separator+"src"+
+	public static String testDataPath = System.getProperty("user.dir")+File.separator+"src"+
 										File.separator+"testData"+File.separator+"TestData";
+	public static String resultsPath = System.getProperty("user.dir")+File.separator+"ExtentReports.html";
 }
