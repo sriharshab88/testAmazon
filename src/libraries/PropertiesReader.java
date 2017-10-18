@@ -11,7 +11,7 @@ public class PropertiesReader {
 	Properties prop;
 	public PropertiesReader() {
 		
-		File file = new File(Configurations.testDataUrl);
+		File file = new File(Configurations.testDataPath);
 		  
 		FileInputStream fileInput = null;
 		try {
@@ -44,7 +44,7 @@ public class PropertiesReader {
 	}
 	
 	public String getsignInAssertionFailMessage() {
-		return prop.getProperty("signInAssertionFailMessage");
+		return prop.getProperty("signInAssertionMessage");
 	}
 	
 	public String getmyAccountAssertion() {
@@ -52,7 +52,7 @@ public class PropertiesReader {
 	}
 	
 	public String getmyAccountAssertionFailMessage() {
-		return prop.getProperty("myAccountAssertionFailMessage");
+		return prop.getProperty("myAccountAssertionMessage");
 	}
 //*************************************************************************	
 	

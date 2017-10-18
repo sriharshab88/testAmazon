@@ -21,6 +21,7 @@ import libraries.ProjectSpecificMethods;
 import libraries.Utilities;
 import pageObjects.MyAccountPageObject;
 import pageObjects.SignInPageObject;
+import results.ExtentResults;
 import testData.TestDataReader;
 
 /**
@@ -36,6 +37,7 @@ public class AmazonTestScriptHarsha{
 	SignInPageObject signIn;
 	MyAccountPageObject myAccount;
 	ProjectSpecificMethods projectSpecificMethods;
+	ExtentResults results = new ExtentResults();
 	
 
 	@BeforeTest
@@ -48,17 +50,20 @@ public class AmazonTestScriptHarsha{
 	
 	
 	@Test(groups= {"Sanity", "Smoke"},enabled = true)
-	public void webdriverCommands() throws Exception {
+	public void demoLogin() throws Exception {
+		
+		results.createtestcase(Thread.currentThread().getStackTrace()[1].getMethodName(), this.getClass().getSimpleName());
+
 				
 		signIn.getSignInText();     //Get the text of the webelement
 		signIn.clickSignInLink();  //Clicks the web element
 		String signInTitle = driver.getTitle();  //Gets the window title
-		Assert.assertEquals(signInTitle, TestDataReader.signInAssertion, TestDataReader.signInAssertionFailMessage);
+		results.assertEquals(signInTitle, TestDataReader.signInAssertion, TestDataReader.signInAssertionFailMessage);
 		
 		signIn.login(TestDataReader.email, TestDataReader.password);
 		
 		String myAccountText = myAccount.getPageTitle();
-		Assert.assertEquals(myAccountText, TestDataReader.myAccountAssertion, TestDataReader.myAccountAssertionFailMessage);
+		results.assertEquals(myAccountText, TestDataReader.myAccountAssertion, TestDataReader.myAccountAssertionFailMessage);
 
 		myAccount.clickSignOut();
 
@@ -92,16 +97,16 @@ public class AmazonTestScriptHarsha{
 		driver.close();
 	}
 	
-	@Test(groups = {"Sanity"}, invocationCount = 10)
+	@Test(groups = {"Sanity"}, invocationCount = 1)
 	public static void testMethod()
 	{
-		
+		System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 		Reporter.log("Test has run "+i+" times", true);
 		i++;
 	}
 	
 	@Test(groups = {"Regression"})
-	public void webDriverCommandsContinue() {
+	public void siteNavigationTest() {
 		
 		driver.manage().window().maximize(); //To maximize the browser window
 		WebElement signIn = driver.findElement(By.xpath("//a[@class='login']")); //Find element using xpath
